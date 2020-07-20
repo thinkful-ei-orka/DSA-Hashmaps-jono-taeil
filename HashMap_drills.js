@@ -59,9 +59,14 @@ const WhatDoesThisDo = function(){
 function deleteDuplicates(string) {
     let noDup = new HashMap;
     for (let i = 0; i < string.length; i++) {
-        console.log(noDup.get(string[i]))
-        noDup.set(string[i], i)
+        try {
+            noDup.get(string[i])
+        }
+        catch {
+            noDup.set(string[i], i)
+        }
     }
-    // console.log(noDup);
 };
+
 deleteDuplicates('google')
+
